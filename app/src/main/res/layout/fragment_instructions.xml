@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019 Mohamed Alaa
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="UseCompoundDrawables">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.maproductions.mohamedalaa.shoestore.view_model.InstructionsViewModel" />
+    </data>
+
+    <!-- ConstraintLayout is Better for weights made by chains between views
+    since if used a LinearLayout the button below would need to be wrapped
+    in another viewGroup to benefit from the weighted design isa. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/iconAndTextLinearLayout"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:gravity="center"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/instruction1TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iconImageView"
+
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+
+                android:src="@drawable/ic_running"
+
+                android:contentDescription="@string/shoe_image"/>
+
+            <TextView
+                android:id="@+id/textBelowIconTextView"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="4dp"
+
+                android:text="@string/start_adding_your_first_shoe"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/instruction1TextView"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/_1_click_on_the_circle_shaped_button_on_the_next_screen_to_add_a_new_shoe"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+
+            android:gravity="center"
+
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+
+            app:layout_constraintTop_toBottomOf="@id/iconAndTextLinearLayout"
+            app:layout_constraintBottom_toTopOf="@id/instruction2TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/instruction2TextView"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/_2_input_shoe_data_amp_save_then_the_shoe_will_appear_in_your_shoes_list"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+
+            android:gravity="center"
+
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+
+            app:layout_constraintTop_toBottomOf="@id/instruction1TextView"
+            app:layout_constraintBottom_toTopOf="@id/getStartedMaterialButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--
+        Guidelines made just for a better look of the button isa.
+        -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vert_guideline_20"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vert_guideline_80"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            app:layout_constraintGuide_percent="0.8"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getStartedMaterialButton"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/go_ahead"
+
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/colorPrimary"
+
+            android:onClick="@{(v) -> viewModel.onGoAheadClick(v)}"
+
+            app:layout_constraintTop_toBottomOf="@id/instruction2TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vert_guideline_20"
+            app:layout_constraintEnd_toEndOf="@id/vert_guideline_80"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

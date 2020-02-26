@@ -1,0 +1,54 @@
+<!--
+  ~ Copyright (c) 2019 Mohamed Alaa
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="toolbarStyle">@style/MAToolbarStyle</item>
+
+        <item name="drawerArrowStyle">@style/MADrawerArrowToggle</item>
+    </style>
+
+    <style name="MAToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+
+        <item name="titleTextColor">@android:color/white</item>
+
+        <item name="subtitleTextColor">@color/toolbar_subtitle</item>
+    </style>
+
+    <style name="MADrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="ButtonBigTextNoCaps" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ButtonBigTextNoCaps.Outlined" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/colorPrimary</item>
+
+        <item name="android:textAllCaps">false</item>
+
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

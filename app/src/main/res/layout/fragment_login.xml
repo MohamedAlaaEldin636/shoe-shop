@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019 Mohamed Alaa
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<!--suppress AndroidUnknownAttribute xml doesn't recognize binding adapter
+so maybe this is a bug in Android Studio -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.maproductions.mohamedalaa.shoestore.view_model.LoginViewModel" />
+    </data>
+
+    <!--
+    LinearLayout is used here since this is a simple layout
+    which would lead to same performance/complexity result if used ConstraintLayout.
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        android:gravity="center"
+
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="@string/e_mail_address"
+            app:hintEnabled="true"
+            app:hintAnimationEnabled="true"
+
+            app:counterEnabled="false"
+
+            android:textInputLayout_errorEnabledOtherwiseHelperEnabled="@{!viewModel.isValidEMailAddress()}"
+
+            android:textInputLayout_errorText="@{viewModel.errorMsgEMailAddress}"
+
+            app:helperText="@string/astrix_required"
+
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                tools:text="example@gmail.com"
+                android:text="@={viewModel.eMailAddress}"
+
+                android:afterTextChanged="@{viewModel::afterEMailAddressTextChange}"
+
+                android:maxLines="1"
+
+                android:imeOptions="flagNoExtractUi|actionNext"
+
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:hint="@string/password"
+            app:hintEnabled="true"
+            app:hintAnimationEnabled="true"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+
+            android:textInputLayout_errorEnabledOtherwiseHelperEnabled="@{!viewModel.isValidPassword()}"
+
+            android:textInputLayout_errorText="@{viewModel.errorMsgPassword}"
+
+            app:helperText="@string/required_length_range_8_20"
+
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                tools:text="example@gmail.com"
+                android:text="@={viewModel.password}"
+
+                android:afterTextChanged="@{viewModel::afterPasswordTextChange}"
+
+                android:maxLength="20"
+                android:maxLines="1"
+
+                android:imeOptions="flagNoExtractUi|actionDone"
+
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="@string/log_in"
+
+            style="@style/ButtonBigTextNoCaps"
+
+            android:onClick="@{(v) -> viewModel.onLogInClick(v)}"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="@string/create_new_account"
+
+            style="@style/ButtonBigTextNoCaps.Outlined"
+
+            android:onClick="@{(v) -> viewModel.onCreateNewAccountClick(v)}"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/keep_me_logged_in"
+
+            android:checked="@={viewModel.keepMeLoggedIn}"
+
+            app:buttonTint="@color/colorPrimary"
+            style="@style/Widget.MaterialComponents.CompoundButton.CheckBox"/>
+
+    </LinearLayout>
+</layout>

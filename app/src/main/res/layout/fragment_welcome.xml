@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019 Mohamed Alaa
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="UseCompoundDrawables">
+
+    <data>
+        <variable
+            name="userEMail"
+            type="String" />
+        <variable
+            name="viewModel"
+            type="com.maproductions.mohamedalaa.shoestore.view_model.WelcomeViewModel" />
+    </data>
+
+    <!-- ConstraintLayout is Better for weights made by chains between views
+    since if used a LinearLayout the button below would need to be wrapped
+    in another viewGroup to benefit from the weighted design isa. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/iconAndTextLinearLayout"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:gravity="center"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/appInfoTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iconImageView"
+
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+
+                android:src="@mipmap/ic_launcher_shoe_shop_rect"
+
+                android:contentDescription="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/textBelowIconTextView"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="4dp"
+
+                tools:text="Welcome\nexample@gmail.com"
+                android:text="@{@string/welcome_br_var(userEMail)}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/appInfoTextView"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/save_your_favorite_list_of_shoes_with_several_properties_for_each_one_of_them_like_shoe_name_company_size_amp_description"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+
+            android:gravity="center"
+
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+
+            app:layout_constraintTop_toBottomOf="@id/iconAndTextLinearLayout"
+            app:layout_constraintBottom_toTopOf="@id/getStartedMaterialButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--
+        Guidelines made just for a better look of the button isa.
+        -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vert_guideline_20"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vert_guideline_80"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            app:layout_constraintGuide_percent="0.8"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getStartedMaterialButton"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/get_started"
+
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/colorPrimary"
+
+            android:onClick="@{(v) -> viewModel.onGetStartedClick(v)}"
+
+            app:layout_constraintTop_toBottomOf="@id/appInfoTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/vert_guideline_20"
+            app:layout_constraintEnd_toEndOf="@id/vert_guideline_80"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

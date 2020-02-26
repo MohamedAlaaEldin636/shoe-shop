@@ -1,0 +1,81 @@
+<!--
+  ~ Copyright (c) 2019 Mohamed Alaa
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Shoe Store</string>
+    <string name="e_mail_address">E-Mail Address</string>
+    <string name="password">Password</string>
+    <string name="astrix_required">*Required</string>
+    <string name="required_length_range_8_20">*Required length range ( 8 ~ 20 )</string>
+    <string name="log_in">Log In</string>
+    <string name="create_new_account">Create new Account</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="length_range_must_be_8_20">Length range must be ( 8 ~ 20 )</string>
+    <string name="invalid_e_mail_address">Invalid e-mail address</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="no_user_found_with_this_e_mail">No user found with this e-mail</string>
+    <string name="user_already_exists_with_this_e_mail">User already exists with this e-mail</string>
+    <string name="unexpected_error_please_try_again">Unexpected error, Please try again.</string>
+    <string name="user_credentials">User Credentials</string>
+    <string name="welcome">Welcome</string>
+    <string name="get_started">Get Started</string>
+    <string name="save_your_favorite_list_of_shoes_with_several_properties_for_each_one_of_them_like_shoe_name_company_size_amp_description"><![CDATA[Save your favorite list of Shoes with several properties for each one of them, Like Shoe Name, Company, Size & Description]]></string>
+    <string name="welcome_br_var">Welcome\n%1$s</string>
+    <string name="shoe_image">Shoe Image</string>
+    <string name="start_adding_your_first_shoe">Start adding your first shoe</string>
+    <string name="_1_click_on_the_circle_shaped_button_on_the_next_screen_to_add_a_new_shoe">1. Click on the circle shaped button on the next screen to add a new Shoe.</string>
+    <string name="_2_input_shoe_data_amp_save_then_the_shoe_will_appear_in_your_shoes_list"><![CDATA[2. Input Shoe data & save, then the Shoe will appear in your shoes list.]]></string>
+    <string name="go_ahead">Go Ahead</string>
+    <string name="create_new_shoe_by_clicking_the_button_below">Create new Shoe by clicking the button below</string>
+    <string name="no_shoes_found">No Shoes Found</string>
+    <string name="company">Company</string>
+    <string name="size_cm_between_brackets">Size (cm)</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="this_field_can_t_be_empty">"This field can't be empty"</string>
+    <string name="size">Size</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="empty_string" />
+    <string name="edit_a_shoe">Edit a Shoe</string>
+    <string name="create_a_shoe">Create a Shoe</string>
+    <string name="another_shoe_exists_with_this_name">Another Shoe exists with this Name.</string>
+    <string name="created_shoe_successfully">Created Shoe successfully</string>
+    <string name="updated_shoe_successfully">Updated Shoe successfully</string>
+    <string name="instructions">Instructions</string>
+    <string name="shoes_list">Shoes List</string>
+    <string name="details">Details</string>
+    <string name="edit_account_password">Edit Account Password</string>
+    <string name="log_out">Log Out</string>
+    <string name="about">About</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="change_password">Change Password</string>
+    <string name="no_change_between_current_amp_new_passwords"><![CDATA[No change between Current & New Passwords]]></string>
+    <string name="new_amp_confirm_passwords_must_be_the_same"><![CDATA[New & Confirm Passwords must be the same]]></string>
+    <string name="incorrect_current_password">Incorrect Current Password</string>
+    <string name="password_updated_successfully">Password Updated Successfully</string>
+    <string name="icon">Icon</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <string name="icons_attribution">Icons Attribution</string>
+    <string name="icon_made_by_var_from">Icon made by %1$s from</string>
+    <string name="other_icons_made_by">Other Icons made by</string>
+    <string name="material_design_icons">material-design-icons</string>
+    <string name="app_made_by">App made by</string>
+</resources>
